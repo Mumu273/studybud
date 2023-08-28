@@ -17,7 +17,7 @@
               </a>
               <h3>Study Room</h3>
             </div>
-            {% if room.post == request.user %}
+            {% if room.host == request.user %}
             <div class="room__topRight">
               <a href="{% url 'update-room' room.id %}">
                 <svg
@@ -123,7 +123,7 @@
 
         <!--   Start -->
         <div class="participants">
-          <h3 class="participants__top">Participants <span>({{icipants.count}} Joined)</span></h3>
+          <h3 class="participants__top">Participants <span>({{participants.count}} Joined)</span></h3>
           <div class="participants__list scroll">
             {% for user in participants %}
             <a href="{% url 'user-profile' user.id %}" class="participant">
